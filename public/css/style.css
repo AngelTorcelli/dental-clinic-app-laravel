@@ -1,0 +1,170 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary-color: #0f1a2b;
+    --secondary-color: #d1cfc9;
+    --tertiary-color: #574949;
+    --button-color: #0f1a2b;
+    --text-color: #202020;
+
+}
+
+
+.error {
+    color: rgb(171, 70, 70);
+    margin-left: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    margin: 5px 0 20px 0;
+    border: none;
+    border-radius: 15px;
+    background: var(--secondary-color);
+    color: var(--text-color);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    background: var(--secondary-color);
+    color: var(--text-color);
+    outline: none;
+}
+
+
+.formulario {
+    background-color: var(--primary-color);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-login {
+    padding: 20px 20px;
+    width: 90%;
+    height: 50vh;
+    align-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+}
+
+
+.contenido-login {
+
+    /* 2 columnas, una imagen y otra con el formulario */
+    background-color: var(--secondary-color);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.contenido-login .imagen {
+    background-image: url(../img/dental4.jpg);
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.95);
+}
+
+.button {
+    background-color: var(--button-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 100%;
+}
+
+
+.button:hover {
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+}
+
+.button-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    height: 20vh;
+    overflow: auto;
+    border: 1px solid var(--tertiary-color);
+
+}
+
+
+tr {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-align: left;
+}
+
+td,
+th {
+    padding: 8px;
+    border-bottom: 1px solid var(--tertiary-color);
+}
+
+/* Evento como tarjeta con sombra y padding */
+.fc-card-event {
+    background-color: #2563EB;
+    /* azul, cámbialo por tu paleta */
+    color: var(--text-color);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.25em 0.5em;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    font-size: 0.875rem;
+}
+
+/* Ejemplo: distinto color según estado */
+.estado-pendiente {
+    background-color: #D97706;
+}
+
+/* amarillo-oscuro */
+.estado-confirmada {
+    background-color: #047857;
+}
+
+/* verde-oscuro  */
+.estado-cancelada {
+    background-color: #B91C1C;
+}
+
+/* rojo-oscuro   */
