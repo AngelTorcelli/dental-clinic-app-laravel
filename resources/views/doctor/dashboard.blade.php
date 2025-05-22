@@ -8,7 +8,7 @@
         </nav>
     </x-slot>
 
-    <h2 class="font-semibold text-xl dark:text-gray-200 text-center">Pacientes</h2>
+    <h2 class="font-semibold text-xl dark:text-gray-200 text-center mb-4 mt-4">Listado de pacientes</h2>
 
     {{-- Modal --}}
     <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
@@ -57,7 +57,7 @@
     </div>
 
     {{-- Tabla de pacientes --}}
-    <table class="table mt-3">
+    <table class="table bg-red-200" style="width: 80vw; margin: 0 auto; border: 5px solid #202020;">
         <thead>
             <tr>
                 <th class="px-4 py-2">ID</th>

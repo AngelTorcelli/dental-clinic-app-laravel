@@ -3,37 +3,11 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
 
-                <div class="p-12 text-gray-900 dark:text-gray-100">
+                <div class="p-12 text-gray-900 dark:text-gray-100 flex flex-wrap justify-between">
 
                     <div class="p-12 px-2 text-gray-900 dark:text-gray-100">
-                        <!-- {{ __('You are logged in!') }} -->
-                        <h2 class="text-xl">Citas</h2>
-                        <div id='calendar'></div>
+                        <div id='calendar' style="width: 50vw;"></div>
 
-
-
-                        <!-- <table class="table-auto justify-start">
-                            <thead>
-                                <tr>
-                                    <th class="px-4 py-2">Fecha y Hora</th>
-                                    <th class="px-4 py-2">Paciente</th>
-                                    <th class="px-4 py-2">Doctor</th>
-                                    <th class="px-4 py-2">Estado</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($citas as $cita)
-                                <tr>
-                                    <td class="px-4 py-2">
-                                        {{ $cita->fecha }} {{ $cita->hora }}
-                                    </td>
-                                    <td class="px-4 py-2">{{ $cita->paciente->name }}</td>
-                                    <td class="px-4 py-2">{{ $cita->doctor->name }}</td>
-                                    <td class="px-4 py-2">{{ $cita->estado }}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table> -->
                     </div>
                     <div class="py-2 px-2">
                         <div class="popup" id="popup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; padding:30px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.5); z-index:100; width:30vw;">
@@ -41,18 +15,22 @@
                             <button id="closePopup" onclick="closePopup()" class="button">Cerrar</button>
                         </div>
 
-                        <h2 class="text-xl">Crear cita</h2>
                         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
 
                                 <div class="p-6 text-gray-900 dark:text-gray-100">
+                                    <h2 class="text-xl">Crear cita</h2>
                                     <form action="{{ route('citas.store') }}" method="POST">
                                         @csrf
-                                        <input type="date" name="fecha" placeholder="Fecha" class="text-gray-800">
-                                        <input type="time" name="hora" placeholder="Hora" class="text-gray-800">
-                                        @error('hora')
-                                        <div class="text-red-600 text-sm">{{ $message }}</div>
-                                        @enderror
+                                        <label for="date" class="block text-sm font-medium">Fecha</label>
+                                        <input id="date" type="date" name="fecha" placeholder="Fecha" class="text-gray-800 w-full">
+                                        <div class="mb-4">
+                                            <label for="hora" class="block text-sm font-medium">Hora</label>
+                                            <input id="hora" type="time" name="hora" placeholder="Hora" class="text-gray-800 w-full">
+                                            @error('hora')
+                                            <div class="text-red-600 text-sm mt-2">{{ $message }}</div>
+                                            @enderror
+                                        </div>
                                         <input required type="text" name="paciente_id" placeholder="ID del Paciente" class="text-gray-800">
 
                                         <input type="hidden" name="doctor_id" value="{{ Auth::user()->id }}" class="text-gray-800">
@@ -86,7 +64,6 @@
 <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css' rel='stylesheet' />
 
 <!-- FullCalendar JS -->
-<!-- <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js'></script> -->
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.17/index.global.min.js"></script>
 

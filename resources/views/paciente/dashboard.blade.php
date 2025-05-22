@@ -14,7 +14,7 @@
                     ">
                         <x-heroicon-o-calendar-days class="text-gray-500" style="width: 3rem;" />
                         <h2 class=" font-semibold text-xl dark:text-gray-200 align-bottom flex-1">
-                            Hola {{ Auth::user()->name }}, tus siguientes citas son:
+                            Hola <span class="text-blue-400 font-bold text-xl">{{ Auth::user()->name }} </span>, tus siguientes citas son:
                         </h2>
                     </div>
                     <table class="table mt-3">
